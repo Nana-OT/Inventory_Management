@@ -41,7 +41,7 @@
             this.bgImage.Image = global::Inventory_Management.Properties.Resources.image_1;
             this.bgImage.Location = new System.Drawing.Point(0, 1);
             this.bgImage.Name = "bgImage";
-            this.bgImage.Size = new System.Drawing.Size(815, 646);
+            this.bgImage.Size = new System.Drawing.Size(1279, 726);
             this.bgImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bgImage.TabIndex = 0;
             this.bgImage.TabStop = false;
@@ -53,7 +53,7 @@
             this.startbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.startbtn.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.startbtn.ForeColor = System.Drawing.Color.Red;
-            this.startbtn.Location = new System.Drawing.Point(252, 475);
+            this.startbtn.Location = new System.Drawing.Point(943, 638);
             this.startbtn.Name = "startbtn";
             this.startbtn.Size = new System.Drawing.Size(194, 70);
             this.startbtn.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 590);
+            this.ClientSize = new System.Drawing.Size(1267, 720);
             this.Controls.Add(this.startbtn);
             this.Controls.Add(this.bgImage);
             this.Name = "GetStartedForm";
