@@ -33,16 +33,27 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.CategoryGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CategoryText = new System.Windows.Forms.RichTextBox();
+            this.AdminIDText = new System.Windows.Forms.RichTextBox();
+            this.AddBtn = new System.Windows.Forms.Button();
+            this.removebtn = new System.Windows.Forms.Button();
+            this.updatebtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -91,7 +102,8 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.pictureBox2);
@@ -104,6 +116,21 @@
             this.panel3.Size = new System.Drawing.Size(300, 634);
             this.panel3.TabIndex = 8;
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(-3, 537);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(300, 40);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "About";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -112,7 +139,7 @@
             this.button7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(3, 516);
+            this.button7.Location = new System.Drawing.Point(0, 583);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(300, 40);
             this.button7.TabIndex = 8;
@@ -194,22 +221,128 @@
             this.button3.Text = "PRODUCT CATEGORIES";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // CategoryGridView
+            // 
+            this.CategoryGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CategoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CategoryGridView.Location = new System.Drawing.Point(765, 89);
+            this.CategoryGridView.Name = "CategoryGridView";
+            this.CategoryGridView.RowHeadersWidth = 62;
+            this.CategoryGridView.RowTemplate.Height = 33;
+            this.CategoryGridView.Size = new System.Drawing.Size(502, 627);
+            this.CategoryGridView.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(342, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Category Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(342, 261);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 25);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Admin ID";
+            // 
+            // CategoryText
+            // 
+            this.CategoryText.Location = new System.Drawing.Point(484, 191);
+            this.CategoryText.Name = "CategoryText";
+            this.CategoryText.Size = new System.Drawing.Size(217, 50);
+            this.CategoryText.TabIndex = 14;
+            this.CategoryText.Text = "";
+            // 
+            // AdminIDText
+            // 
+            this.AdminIDText.Location = new System.Drawing.Point(484, 258);
+            this.AdminIDText.Name = "AdminIDText";
+            this.AdminIDText.Size = new System.Drawing.Size(217, 50);
+            this.AdminIDText.TabIndex = 15;
+            this.AdminIDText.Text = "";
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.BackColor = System.Drawing.Color.Black;
+            this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AddBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.AddBtn.Location = new System.Drawing.Point(333, 386);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(112, 41);
+            this.AddBtn.TabIndex = 16;
+            this.AddBtn.Text = "Add";
+            this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
+            // removebtn
+            // 
+            this.removebtn.BackColor = System.Drawing.Color.Black;
+            this.removebtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.removebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.removebtn.Location = new System.Drawing.Point(451, 386);
+            this.removebtn.Name = "removebtn";
+            this.removebtn.Size = new System.Drawing.Size(141, 41);
+            this.removebtn.TabIndex = 17;
+            this.removebtn.Text = "Remove";
+            this.removebtn.UseVisualStyleBackColor = false;
+            this.removebtn.Click += new System.EventHandler(this.removebtn_Click);
+            // 
+            // updatebtn
+            // 
+            this.updatebtn.BackColor = System.Drawing.Color.Black;
+            this.updatebtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.updatebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.updatebtn.Location = new System.Drawing.Point(598, 386);
+            this.updatebtn.Name = "updatebtn";
+            this.updatebtn.Size = new System.Drawing.Size(121, 41);
+            this.updatebtn.TabIndex = 18;
+            this.updatebtn.Text = "Update";
+            this.updatebtn.UseVisualStyleBackColor = false;
+            this.updatebtn.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(369, 104);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(332, 32);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Manage Product Categories";
+            // 
             // ProductCatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 720);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.updatebtn);
+            this.Controls.Add(this.removebtn);
+            this.Controls.Add(this.AddBtn);
+            this.Controls.Add(this.AdminIDText);
+            this.Controls.Add(this.CategoryText);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CategoryGridView);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.Name = "ProductCatForm";
             this.Text = "ProductCatForm";
+            this.Load += new System.EventHandler(this.ProductCatForm_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -226,5 +359,15 @@
         private Button button1;
         private Button button4;
         private Button button3;
+        private Button button8;
+        private DataGridView CategoryGridView;
+        private Label label1;
+        private Label label2;
+        private RichTextBox CategoryText;
+        private RichTextBox AdminIDText;
+        private Button AddBtn;
+        private Button removebtn;
+        private Button updatebtn;
+        private Label label3;
     }
 }

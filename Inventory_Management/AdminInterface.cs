@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Inventory_Management
 {
     public partial class AdminInterface : Form
     {
+       
         public AdminInterface()
         {
             InitializeComponent();
@@ -30,6 +32,15 @@ namespace Inventory_Management
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProductCatForm category = new ProductCatForm();
+            category.Show();
+
+           
         }
     }
 }
