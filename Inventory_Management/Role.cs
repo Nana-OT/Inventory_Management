@@ -31,5 +31,12 @@ namespace Inventory_Management
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminInterface admin = new AdminInterface();
+            admin.Show();
+        }
     }
 }

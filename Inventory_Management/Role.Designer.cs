@@ -32,7 +32,7 @@
             this.shopRite = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.loginbtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -75,18 +75,19 @@
             this.textBox2.Size = new System.Drawing.Size(241, 31);
             this.textBox2.TabIndex = 17;
             // 
-            // button2
+            // loginbtn
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(266, 441);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(265, 34);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Login";
-            this.button2.UseVisualStyleBackColor = false;
+            this.loginbtn.BackColor = System.Drawing.Color.Black;
+            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginbtn.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.loginbtn.ForeColor = System.Drawing.Color.White;
+            this.loginbtn.Location = new System.Drawing.Point(266, 441);
+            this.loginbtn.Name = "loginbtn";
+            this.loginbtn.Size = new System.Drawing.Size(265, 34);
+            this.loginbtn.TabIndex = 15;
+            this.loginbtn.Text = "Login";
+            this.loginbtn.UseVisualStyleBackColor = false;
+            this.loginbtn.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -146,7 +147,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.loginbtn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.shopRite);
@@ -164,7 +165,7 @@
         private PictureBox shopRite;
         private ComboBox comboBox1;
         private TextBox textBox2;
-        private Button button2;
+        private Button loginbtn;
         private TextBox textBox1;
         private Label label2;
         private PictureBox pictureBox3;

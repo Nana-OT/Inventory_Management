@@ -41,5 +41,10 @@ namespace Inventory_Management
             Role role = new Role();
             role.Show();
         }
+
+        private void bgImage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,10 +41,11 @@
             this.bgImage.Image = global::Inventory_Management.Properties.Resources.image_1;
             this.bgImage.Location = new System.Drawing.Point(0, 1);
             this.bgImage.Name = "bgImage";
-            this.bgImage.Size = new System.Drawing.Size(722, 597);
+            this.bgImage.Size = new System.Drawing.Size(815, 646);
             this.bgImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bgImage.TabIndex = 0;
             this.bgImage.TabStop = false;
+            this.bgImage.Click += new System.EventHandler(this.bgImage_Click);
             // 
             // startbtn
             // 
@@ -64,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 597);
+            this.ClientSize = new System.Drawing.Size(800, 590);
             this.Controls.Add(this.startbtn);
             this.Controls.Add(this.bgImage);
             this.Name = "GetStartedForm";
