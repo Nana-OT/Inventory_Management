@@ -148,6 +148,7 @@
             this.button6.TabIndex = 8;
             this.button6.Text = "SALES REPORT";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox2
             // 
@@ -189,6 +190,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "ATTENDANTS";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -245,6 +247,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "ADMIN DASHBOARD";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -280,6 +283,7 @@
             this.Controls.Add(this.panelDisplay);
             this.Name = "AdminInterface";
             this.Text = "AdminInterface";
+            this.Load += new System.EventHandler(this.AdminInterface_Load);
             this.panelDisplay.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CategoryGridView)).EndInit();

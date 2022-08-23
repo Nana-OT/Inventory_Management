@@ -64,6 +64,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1077, 84);
             this.panel2.TabIndex = 7;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button2
             // 
@@ -79,6 +80,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "ADMIN DASHBOARD";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -175,6 +177,7 @@
             this.button5.TabIndex = 7;
             this.button5.Text = "STOCK";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -190,6 +193,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "ATTENDANTS";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -205,14 +209,15 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "PRODUCTS";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3.BackColor = System.Drawing.Color.White;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(0, 258);
             this.button3.Name = "button3";
@@ -220,6 +225,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "PRODUCT CATEGORIES";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // CategoryGridView
             // 
@@ -309,11 +315,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(369, 104);
+            this.label3.Location = new System.Drawing.Point(342, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(332, 32);
             this.label3.TabIndex = 19;
             this.label3.Text = "Manage Product Categories";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // ProductCatForm
             // 

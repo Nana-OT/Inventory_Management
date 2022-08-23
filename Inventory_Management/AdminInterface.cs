@@ -26,12 +26,16 @@ namespace Inventory_Management
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            ProductsForm productsForm = new ProductsForm();
+            productsForm.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            StockInterface stockInterface = new StockInterface();
+            stockInterface.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -41,6 +45,29 @@ namespace Inventory_Management
             category.Show();
 
            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AttendantsForm attendantsForm = new AttendantsForm();
+            attendantsForm.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form form = new Form();
+            form.Refresh();
+        }
+
+        private void AdminInterface_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

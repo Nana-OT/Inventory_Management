@@ -29,40 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Role));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.roleComboBox = new System.Windows.Forms.ComboBox();
+            this.passwordTxt = new System.Windows.Forms.TextBox();
             this.loginbtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.usernameTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // roleComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Super Admin",
+            this.roleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.roleComboBox.FormattingEnabled = true;
+            this.roleComboBox.Items.AddRange(new object[] {
+            "",
             "Admin",
             "Attendant"});
-            this.comboBox1.Location = new System.Drawing.Point(587, 317);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(243, 33);
-            this.comboBox1.TabIndex = 4;
+            this.roleComboBox.Location = new System.Drawing.Point(587, 317);
+            this.roleComboBox.Name = "roleComboBox";
+            this.roleComboBox.Size = new System.Drawing.Size(243, 33);
+            this.roleComboBox.TabIndex = 4;
+            this.roleComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBox2
+            // passwordTxt
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox2.Location = new System.Drawing.Point(587, 430);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 31);
-            this.textBox2.TabIndex = 17;
+            this.passwordTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordTxt.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.passwordTxt.Location = new System.Drawing.Point(587, 430);
+            this.passwordTxt.Name = "passwordTxt";
+            this.passwordTxt.Size = new System.Drawing.Size(241, 31);
+            this.passwordTxt.TabIndex = 17;
             // 
             // loginbtn
             // 
@@ -70,22 +72,22 @@
             this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginbtn.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.loginbtn.ForeColor = System.Drawing.Color.White;
-            this.loginbtn.Location = new System.Drawing.Point(517, 507);
+            this.loginbtn.Location = new System.Drawing.Point(665, 497);
             this.loginbtn.Name = "loginbtn";
-            this.loginbtn.Size = new System.Drawing.Size(265, 34);
+            this.loginbtn.Size = new System.Drawing.Size(140, 34);
             this.loginbtn.TabIndex = 15;
             this.loginbtn.Text = "Login";
             this.loginbtn.UseVisualStyleBackColor = false;
             this.loginbtn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // usernameTxt
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox1.Location = new System.Drawing.Point(587, 380);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 31);
-            this.textBox1.TabIndex = 13;
+            this.usernameTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.usernameTxt.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.usernameTxt.Location = new System.Drawing.Point(587, 380);
+            this.usernameTxt.Name = "usernameTxt";
+            this.usernameTxt.Size = new System.Drawing.Size(243, 31);
+            this.usernameTxt.TabIndex = 13;
             // 
             // label2
             // 
@@ -135,23 +137,39 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(491, 497);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 34);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Role
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 720);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.passwordTxt);
             this.Controls.Add(this.loginbtn);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.usernameTxt);
+            this.Controls.Add(this.roleComboBox);
             this.Name = "Role";
             this.Text = "Role";
+            this.Load += new System.EventHandler(this.Role_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -160,14 +178,15 @@
         }
 
         #endregion
-        private ComboBox comboBox1;
-        private TextBox textBox2;
+        private ComboBox roleComboBox;
+        private TextBox passwordTxt;
         private Button loginbtn;
-        private TextBox textBox1;
+        private TextBox usernameTxt;
         private Label label2;
         private PictureBox pictureBox3;
         private Label label1;
         private Label label3;
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }

@@ -27,6 +27,7 @@ namespace Inventory_Management
                 mySqlDataAdapter.Fill(dt);
 
                 CategoryGridView.DataSource = dt;
+                connection.Close();
           //  }
         }
 
@@ -48,6 +49,8 @@ namespace Inventory_Management
 
                     MessageBox.Show("Category updated succesfully");
                     connection.Close();
+                    CategoryText.Text = String.Empty;
+                    AdminIDText.Text = String.Empty;
                 }
 
 
@@ -56,6 +59,7 @@ namespace Inventory_Management
                 mySqlDataAdapter.Fill(dt);
 
                 CategoryGridView.DataSource = dt;
+                connection.Close();
             }
         }
 
@@ -77,7 +81,9 @@ namespace Inventory_Management
 
                         MessageBox.Show("Category added succesfully");
                         connection.Close();
-                    }
+                        CategoryText.Text = String.Empty;
+                        AdminIDText.Text = String.Empty;
+                }
 
 
                 MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM `prodcategory` WHERE 1", connection);
@@ -85,6 +91,7 @@ namespace Inventory_Management
                 mySqlDataAdapter.Fill(dt);
 
                 CategoryGridView.DataSource = dt;
+                connection.Close();
             }
         }
 
@@ -106,6 +113,10 @@ namespace Inventory_Management
 
                     MessageBox.Show("Category removed succesfully");
                     connection.Close();
+
+                    CategoryText.Text = String.Empty;
+                    AdminIDText.Text = String.Empty;
+
                 }
 
 
@@ -114,12 +125,55 @@ namespace Inventory_Management
                 mySqlDataAdapter.Fill(dt);
 
                 CategoryGridView.DataSource = dt;
+                connection.Close();
             }
         }
 
         private void ProductCatForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ProductsForm productsForm = new ProductsForm();
+            productsForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form form = new Form();
+            form.Refresh(); 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AttendantsForm attendantsForm = new AttendantsForm();
+            attendantsForm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StockInterface stockInterface = new StockInterface();
+            stockInterface.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Refresh();
         }
     }
 }
