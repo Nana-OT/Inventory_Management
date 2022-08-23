@@ -53,7 +53,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button16 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.productDataGrid = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.updatebtn = new System.Windows.Forms.Button();
             this.removebtn = new System.Windows.Forms.Button();
@@ -70,6 +70,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.AdminIdTxt = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.categoryTxt = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,7 +81,7 @@
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -430,22 +432,23 @@
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
             // 
-            // dataGridView1
+            // productDataGrid
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(765, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(502, 627);
-            this.dataGridView1.TabIndex = 18;
+            this.productDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.productDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productDataGrid.Location = new System.Drawing.Point(697, 90);
+            this.productDataGrid.Name = "productDataGrid";
+            this.productDataGrid.RowHeadersWidth = 62;
+            this.productDataGrid.RowTemplate.Height = 33;
+            this.productDataGrid.Size = new System.Drawing.Size(570, 627);
+            this.productDataGrid.TabIndex = 18;
+            this.productDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(339, 103);
+            this.label3.Location = new System.Drawing.Point(307, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(215, 32);
             this.label3.TabIndex = 27;
@@ -457,31 +460,33 @@
             this.updatebtn.BackColor = System.Drawing.Color.Black;
             this.updatebtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.updatebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.updatebtn.Location = new System.Drawing.Point(604, 585);
+            this.updatebtn.Location = new System.Drawing.Point(570, 591);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(121, 41);
             this.updatebtn.TabIndex = 26;
             this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = false;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // removebtn
             // 
             this.removebtn.BackColor = System.Drawing.Color.Black;
             this.removebtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.removebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.removebtn.Location = new System.Drawing.Point(457, 585);
+            this.removebtn.Location = new System.Drawing.Point(423, 591);
             this.removebtn.Name = "removebtn";
             this.removebtn.Size = new System.Drawing.Size(141, 41);
             this.removebtn.TabIndex = 25;
             this.removebtn.Text = "Remove";
             this.removebtn.UseVisualStyleBackColor = false;
+            this.removebtn.Click += new System.EventHandler(this.removebtn_Click);
             // 
             // AddBtn
             // 
             this.AddBtn.BackColor = System.Drawing.Color.Black;
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.AddBtn.Location = new System.Drawing.Point(339, 585);
+            this.AddBtn.Location = new System.Drawing.Point(305, 591);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(112, 41);
             this.AddBtn.TabIndex = 24;
@@ -491,7 +496,7 @@
             // 
             // barcodetxt
             // 
-            this.barcodetxt.Location = new System.Drawing.Point(484, 246);
+            this.barcodetxt.Location = new System.Drawing.Point(452, 276);
             this.barcodetxt.Name = "barcodetxt";
             this.barcodetxt.Size = new System.Drawing.Size(217, 50);
             this.barcodetxt.TabIndex = 23;
@@ -499,7 +504,7 @@
             // 
             // ProdNametxt
             // 
-            this.ProdNametxt.Location = new System.Drawing.Point(484, 179);
+            this.ProdNametxt.Location = new System.Drawing.Point(452, 165);
             this.ProdNametxt.Name = "ProdNametxt";
             this.ProdNametxt.Size = new System.Drawing.Size(217, 50);
             this.ProdNametxt.TabIndex = 22;
@@ -508,16 +513,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(342, 249);
+            this.label2.Location = new System.Drawing.Point(310, 279);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "BarCode";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(342, 193);
+            this.label1.Location = new System.Drawing.Point(310, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 25);
             this.label1.TabIndex = 20;
@@ -525,7 +531,7 @@
             // 
             // quantitytxt
             // 
-            this.quantitytxt.Location = new System.Drawing.Point(484, 308);
+            this.quantitytxt.Location = new System.Drawing.Point(452, 338);
             this.quantitytxt.Name = "quantitytxt";
             this.quantitytxt.Size = new System.Drawing.Size(217, 50);
             this.quantitytxt.TabIndex = 29;
@@ -534,7 +540,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(342, 311);
+            this.label4.Location = new System.Drawing.Point(310, 341);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 25);
             this.label4.TabIndex = 28;
@@ -542,7 +548,7 @@
             // 
             // priceTxt
             // 
-            this.priceTxt.Location = new System.Drawing.Point(484, 367);
+            this.priceTxt.Location = new System.Drawing.Point(452, 397);
             this.priceTxt.Name = "priceTxt";
             this.priceTxt.Size = new System.Drawing.Size(217, 50);
             this.priceTxt.TabIndex = 31;
@@ -551,7 +557,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(342, 370);
+            this.label5.Location = new System.Drawing.Point(310, 400);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 25);
             this.label5.TabIndex = 30;
@@ -559,7 +565,7 @@
             // 
             // expTxt
             // 
-            this.expTxt.Location = new System.Drawing.Point(484, 423);
+            this.expTxt.Location = new System.Drawing.Point(452, 453);
             this.expTxt.Name = "expTxt";
             this.expTxt.Size = new System.Drawing.Size(217, 50);
             this.expTxt.TabIndex = 33;
@@ -568,7 +574,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(342, 426);
+            this.label6.Location = new System.Drawing.Point(310, 456);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 25);
             this.label6.TabIndex = 32;
@@ -576,7 +582,7 @@
             // 
             // AdminIdTxt
             // 
-            this.AdminIdTxt.Location = new System.Drawing.Point(484, 479);
+            this.AdminIdTxt.Location = new System.Drawing.Point(452, 509);
             this.AdminIdTxt.Name = "AdminIdTxt";
             this.AdminIdTxt.Size = new System.Drawing.Size(217, 50);
             this.AdminIdTxt.TabIndex = 35;
@@ -585,11 +591,28 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(342, 482);
+            this.label7.Location = new System.Drawing.Point(310, 512);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 25);
             this.label7.TabIndex = 34;
             this.label7.Text = "Admin ID";
+            // 
+            // categoryTxt
+            // 
+            this.categoryTxt.Location = new System.Drawing.Point(452, 221);
+            this.categoryTxt.Name = "categoryTxt";
+            this.categoryTxt.Size = new System.Drawing.Size(217, 50);
+            this.categoryTxt.TabIndex = 41;
+            this.categoryTxt.Text = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(310, 235);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 25);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "CategoryID";
             // 
             // ProductsForm
             // 
@@ -597,6 +620,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 720);
+            this.Controls.Add(this.categoryTxt);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.AdminIdTxt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.expTxt);
@@ -616,7 +641,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.productDataGrid);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
@@ -633,7 +658,7 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,7 +691,7 @@
         private Panel panel4;
         private Button button16;
         private PictureBox pictureBox4;
-        private DataGridView dataGridView1;
+        private DataGridView productDataGrid;
         private Label label3;
         private Button updatebtn;
         private Button removebtn;
@@ -683,5 +708,7 @@
         private Label label6;
         private RichTextBox AdminIdTxt;
         private Label label7;
+        private RichTextBox categoryTxt;
+        private Label label8;
     }
 }

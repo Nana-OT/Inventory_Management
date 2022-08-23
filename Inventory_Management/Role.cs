@@ -37,7 +37,10 @@ namespace Inventory_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (roleComboBox.SelectedItem == "Admin")
+             this.Hide();
+             AdminInterface admin = new AdminInterface();
+             admin.Show();
+           /* if (roleComboBox.SelectedItem == "Admin")
             {
                 string username, userPassword;
                 username = usernameTxt.Text;
@@ -86,7 +89,7 @@ namespace Inventory_Management
             else
             {
                 MessageBox.Show("Choose a valid role");
-            }
+            }*/
 
         }
 

@@ -31,12 +31,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.phoneTxt = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.genderTxt = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dobTxt = new System.Windows.Forms.RichTextBox();
+            this.passwordTxt = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.updatebtn = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -52,20 +52,20 @@
             this.button16 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.AdminIDText = new System.Windows.Forms.RichTextBox();
-            this.CategoryText = new System.Windows.Forms.RichTextBox();
+            this.usernameTxt = new System.Windows.Forms.RichTextBox();
+            this.fullnameTxt = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.attendantsDataGrid = new System.Windows.Forms.DataGridView();
+            this.addressTxt = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
+            this.adminIdText = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attendantsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox3
@@ -110,13 +110,13 @@
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // richTextBox4
+            // phoneTxt
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(457, 428);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(217, 50);
-            this.richTextBox4.TabIndex = 55;
-            this.richTextBox4.Text = "";
+            this.phoneTxt.Location = new System.Drawing.Point(457, 428);
+            this.phoneTxt.Name = "phoneTxt";
+            this.phoneTxt.Size = new System.Drawing.Size(217, 50);
+            this.phoneTxt.TabIndex = 55;
+            this.phoneTxt.Text = "";
             // 
             // label7
             // 
@@ -127,13 +127,13 @@
             this.label7.TabIndex = 54;
             this.label7.Text = "Phone";
             // 
-            // richTextBox3
+            // genderTxt
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(457, 372);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(217, 50);
-            this.richTextBox3.TabIndex = 53;
-            this.richTextBox3.Text = "";
+            this.genderTxt.Location = new System.Drawing.Point(457, 372);
+            this.genderTxt.Name = "genderTxt";
+            this.genderTxt.Size = new System.Drawing.Size(217, 50);
+            this.genderTxt.TabIndex = 53;
+            this.genderTxt.Text = "";
             // 
             // label6
             // 
@@ -144,21 +144,21 @@
             this.label6.TabIndex = 52;
             this.label6.Text = "Gender(M/F)";
             // 
-            // richTextBox2
+            // dobTxt
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(457, 316);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(217, 50);
-            this.richTextBox2.TabIndex = 51;
-            this.richTextBox2.Text = "";
+            this.dobTxt.Location = new System.Drawing.Point(457, 316);
+            this.dobTxt.Name = "dobTxt";
+            this.dobTxt.Size = new System.Drawing.Size(217, 50);
+            this.dobTxt.TabIndex = 51;
+            this.dobTxt.Text = "";
             // 
-            // richTextBox1
+            // passwordTxt
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(457, 260);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(217, 50);
-            this.richTextBox1.TabIndex = 49;
-            this.richTextBox1.Text = "";
+            this.passwordTxt.Location = new System.Drawing.Point(457, 260);
+            this.passwordTxt.Name = "passwordTxt";
+            this.passwordTxt.Size = new System.Drawing.Size(217, 50);
+            this.passwordTxt.TabIndex = 49;
+            this.passwordTxt.Text = "";
             // 
             // label4
             // 
@@ -352,22 +352,23 @@
             this.AddBtn.TabIndex = 44;
             this.AddBtn.Text = "Add";
             this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // AdminIDText
+            // usernameTxt
             // 
-            this.AdminIDText.Location = new System.Drawing.Point(457, 204);
-            this.AdminIDText.Name = "AdminIDText";
-            this.AdminIDText.Size = new System.Drawing.Size(217, 50);
-            this.AdminIDText.TabIndex = 43;
-            this.AdminIDText.Text = "";
+            this.usernameTxt.Location = new System.Drawing.Point(457, 204);
+            this.usernameTxt.Name = "usernameTxt";
+            this.usernameTxt.Size = new System.Drawing.Size(217, 50);
+            this.usernameTxt.TabIndex = 43;
+            this.usernameTxt.Text = "";
             // 
-            // CategoryText
+            // fullnameTxt
             // 
-            this.CategoryText.Location = new System.Drawing.Point(457, 148);
-            this.CategoryText.Name = "CategoryText";
-            this.CategoryText.Size = new System.Drawing.Size(217, 50);
-            this.CategoryText.TabIndex = 42;
-            this.CategoryText.Text = "";
+            this.fullnameTxt.Location = new System.Drawing.Point(457, 148);
+            this.fullnameTxt.Name = "fullnameTxt";
+            this.fullnameTxt.Size = new System.Drawing.Size(217, 50);
+            this.fullnameTxt.TabIndex = 42;
+            this.fullnameTxt.Text = "";
             // 
             // label2
             // 
@@ -387,24 +388,24 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Full Name";
             // 
-            // dataGridView1
+            // attendantsDataGrid
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(719, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(548, 627);
-            this.dataGridView1.TabIndex = 39;
+            this.attendantsDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.attendantsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.attendantsDataGrid.Location = new System.Drawing.Point(719, 92);
+            this.attendantsDataGrid.Name = "attendantsDataGrid";
+            this.attendantsDataGrid.RowHeadersWidth = 62;
+            this.attendantsDataGrid.RowTemplate.Height = 33;
+            this.attendantsDataGrid.Size = new System.Drawing.Size(548, 627);
+            this.attendantsDataGrid.TabIndex = 39;
             // 
-            // richTextBox5
+            // addressTxt
             // 
-            this.richTextBox5.Location = new System.Drawing.Point(457, 484);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(217, 50);
-            this.richTextBox5.TabIndex = 57;
-            this.richTextBox5.Text = "";
+            this.addressTxt.Location = new System.Drawing.Point(457, 484);
+            this.addressTxt.Name = "addressTxt";
+            this.addressTxt.Size = new System.Drawing.Size(217, 50);
+            this.addressTxt.TabIndex = 57;
+            this.addressTxt.Text = "";
             // 
             // label8
             // 
@@ -415,13 +416,13 @@
             this.label8.TabIndex = 56;
             this.label8.Text = "Address";
             // 
-            // richTextBox6
+            // adminIdText
             // 
-            this.richTextBox6.Location = new System.Drawing.Point(457, 540);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(217, 50);
-            this.richTextBox6.TabIndex = 59;
-            this.richTextBox6.Text = "";
+            this.adminIdText.Location = new System.Drawing.Point(457, 540);
+            this.adminIdText.Name = "adminIdText";
+            this.adminIdText.Size = new System.Drawing.Size(217, 50);
+            this.adminIdText.TabIndex = 59;
+            this.adminIdText.Text = "";
             // 
             // label9
             // 
@@ -437,16 +438,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 720);
-            this.Controls.Add(this.richTextBox6);
+            this.Controls.Add(this.adminIdText);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.richTextBox5);
+            this.Controls.Add(this.addressTxt);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.richTextBox4);
+            this.Controls.Add(this.phoneTxt);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.genderTxt);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.dobTxt);
+            this.Controls.Add(this.passwordTxt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.label5);
@@ -456,11 +457,11 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.AddBtn);
-            this.Controls.Add(this.AdminIDText);
-            this.Controls.Add(this.CategoryText);
+            this.Controls.Add(this.usernameTxt);
+            this.Controls.Add(this.fullnameTxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.attendantsDataGrid);
             this.Name = "AttendantsForm";
             this.Text = "AttendantsForm";
             this.Load += new System.EventHandler(this.AttendantsForm_Load);
@@ -468,7 +469,7 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attendantsDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,12 +480,12 @@
         private PictureBox pictureBox3;
         private Button button14;
         private Button button15;
-        private RichTextBox richTextBox4;
+        private RichTextBox phoneTxt;
         private Label label7;
-        private RichTextBox richTextBox3;
+        private RichTextBox genderTxt;
         private Label label6;
-        private RichTextBox richTextBox2;
-        private RichTextBox richTextBox1;
+        private RichTextBox dobTxt;
+        private RichTextBox passwordTxt;
         private Label label4;
         private Button updatebtn;
         private Button button9;
@@ -500,14 +501,14 @@
         private Button button16;
         private PictureBox pictureBox4;
         private Button AddBtn;
-        private RichTextBox AdminIDText;
-        private RichTextBox CategoryText;
+        private RichTextBox usernameTxt;
+        private RichTextBox fullnameTxt;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
-        private RichTextBox richTextBox5;
+        private DataGridView attendantsDataGrid;
+        private RichTextBox addressTxt;
         private Label label8;
-        private RichTextBox richTextBox6;
+        private RichTextBox adminIdText;
         private Label label9;
     }
 }

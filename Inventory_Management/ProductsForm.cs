@@ -24,7 +24,7 @@ namespace Inventory_Management
             DataTable dt = new DataTable();
             mySqlDataAdapter.Fill(dt);
 
-            CategoryGridView.DataSource = dt;
+            productDataGrid.DataSource = dt;
             //  }
         }
 
@@ -39,19 +39,20 @@ namespace Inventory_Management
             {
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
-                if (ProdNametxt.Text == "" & barcodetxt.Text == "" & quantitytxt.Text == "" & priceTxt.Text == "" & expTxt.Text == "" & AdminIdTxt.Text == "")
+                if (ProdNametxt.Text == "" & categoryTxt.Text == "" & barcodetxt.Text == "" & quantitytxt.Text == "" & priceTxt.Text == "" & expTxt.Text == "" & AdminIdTxt.Text == "")
                 {
-                    MessageBox.Show("Please fill out all fields correctly");
+                    MessageBox.Show("Please fill out all fields");
                 }
                 else
                 {
-                    string query = "INSERT INTO `product`(`prodname`, `barcode`, `Quantity`, `Price(GHs)`, `ExpDate`, `admin_id`) VALUES ('" + ProdNametxt.Text + "','" + barcodetxt.Text + "', '" + quantitytxt.Text + "', '" + priceTxt.Text + "', '" + expTxt.Text + "', '" + AdminIdTxt.Text + "')";
+                    string query = "INSERT INTO `product`(`prodname`, `prod_category_id`, `barcode`, `Quantity`, `Price(GHs)`, `ExpDate`, `admin_id`) VALUES ('" + ProdNametxt.Text + "','" + categoryTxt.Text + "','" + barcodetxt.Text + "', '" + quantitytxt.Text + "', '" + priceTxt.Text + "', '" + expTxt.Text + "', '" + AdminIdTxt.Text + "' )";
                     command = new MySqlCommand(query, connection);
                     command.ExecuteNonQuery();
 
-                    MessageBox.Show("Category added succesfully");
+                    MessageBox.Show("Product Added Succesfully");
                     connection.Close();
                     ProdNametxt.Text = String.Empty;
+                    categoryTxt.Text = String.Empty;
                     barcodetxt.Text = String.Empty;
                     quantitytxt.Text = String.Empty;
                     priceTxt.Text = String.Empty;
@@ -64,7 +65,7 @@ namespace Inventory_Management
                 DataTable dt = new DataTable();
                 mySqlDataAdapter.Fill(dt);
 
-                CategoryGridView.DataSource = dt;
+                productDataGrid.DataSource = dt;
             }
         }
 
@@ -103,6 +104,92 @@ namespace Inventory_Management
         private void ProductsForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void removebtn_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand();
+                if (categoryTxt.Text == "" & ProdNametxt.Text == "" & AdminIdTxt.Text == "")
+                {
+                    MessageBox.Show("Please fill out all fields");
+                }
+                else
+                {
+                    string query = "DELETE FROM product WHERE prod_category_id ='" + categoryTxt.Text + "' AND prodname = '"+ProdNametxt.Text+"' ";
+                    command = new MySqlCommand(query, connection);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Product removed succesfully");
+                    connection.Close();
+
+                    ProdNametxt.Text = String.Empty;
+                    categoryTxt.Text = String.Empty;
+                    barcodetxt.Text = String.Empty;
+                    quantitytxt.Text = String.Empty;
+                    priceTxt.Text = String.Empty;
+                    expTxt.Text = String.Empty;
+                    AdminIdTxt.Text = String.Empty;
+
+                }
+
+
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM `product` WHERE 1", connection);
+                DataTable dt = new DataTable();
+                mySqlDataAdapter.Fill(dt);
+
+                productDataGrid.DataSource = dt;
+                connection.Close();
+            }
+        }
+
+        private void updatebtn_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand();
+                if (ProdNametxt.Text == "" & categoryTxt.Text == "" & barcodetxt.Text == "" & quantitytxt.Text == "" & priceTxt.Text == "" & expTxt.Text == "" & AdminIdTxt.Text == "")
+                {
+                    MessageBox.Show("Please fill out all fields");
+                }
+                else
+                {
+                    string query = "UPDATE `product` SET `prodname`='" + ProdNametxt.Text + "',`prod_category_id`='" + categoryTxt.Text + "',`barcode`='" + barcodetxt.Text + "',`Quantity`='" + quantitytxt.Text + "',`Price(Ghs)`='" + priceTxt.Text + "',`admin_id`='" + AdminIdTxt.Text + "' WHERE 1";
+                    command = new MySqlCommand(query, connection);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Category updated succesfully");
+                    connection.Close();
+                    ProdNametxt.Text = String.Empty;
+                    categoryTxt.Text = String.Empty;
+                    barcodetxt.Text = String.Empty;
+                    quantitytxt.Text = String.Empty;
+                    priceTxt.Text = String.Empty;
+                    expTxt.Text = String.Empty;
+                    AdminIdTxt.Text = String.Empty;
+                }
+
+
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM `prodcategory` WHERE 1", connection);
+                DataTable dt = new DataTable();
+                mySqlDataAdapter.Fill(dt);
+
+                productDataGrid.DataSource = dt;
+                connection.Close();
+            }
         }
     }
 }

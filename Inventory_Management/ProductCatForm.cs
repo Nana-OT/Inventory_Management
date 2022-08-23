@@ -39,7 +39,7 @@ namespace Inventory_Management
                 MySqlCommand command = new MySqlCommand();
                 if (CategoryText.Text == "" & AdminIDText.Text == "")
                 {
-                    MessageBox.Show("Please fill out all fields correctly");
+                    MessageBox.Show("Please fill out all fields");
                 }
                 else
                 {
@@ -71,7 +71,7 @@ namespace Inventory_Management
                 MySqlCommand command = new MySqlCommand();
                 if (CategoryText.Text=="" & AdminIDText.Text == "")
                    {
-                       MessageBox.Show("Please fill out all fields correctly");
+                       MessageBox.Show("Please fill out all fields");
                    }
                 else
                    {

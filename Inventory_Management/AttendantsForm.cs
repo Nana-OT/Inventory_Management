@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace Inventory_Management
 {
     public partial class AttendantsForm : Form
     {
+        public static string connectionString = "server=localhost;database=inventory_system;uid=root; pwd=\"\";";
+        public static MySqlConnection connection = new MySqlConnection(connectionString);
         public AttendantsForm()
         {
             InitializeComponent();
+            //using (MySqlConnection connection = new MySqlConnection(connectionString))
+            // {
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM `product` WHERE 1", connection);
+            DataTable dt = new DataTable();
+            mySqlDataAdapter.Fill(dt);
+
+            attendantsDataGrid.DataSource = dt;
+            //  }
         }
 
         private void AttendantsForm_Load(object sender, EventArgs e)
@@ -52,6 +63,43 @@ namespace Inventory_Management
         private void button16_Click(object sender, EventArgs e)
         {
             this.Refresh();
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand();
+                if (fullnameTxt.Text == "" & usernameTxt.Text == "" & passwordTxt.Text == "" & dobTxt.Text == "" & genderTxt.Text == "" & phoneTxt.Text == "" & addressTxt.Text == ""  & adminIdText.Text == "")
+                {
+                    MessageBox.Show("Please fill out all fields correctly");
+                }
+                else
+                {
+                    string query = "INSERT INTO  `attendant`(`fullname`, `username`, `passwd`, `dob`, `gender`, `phone`, `address`, `admin_id`)) VALUES ('" + fullnameTxt.Text + "','" + usernameTxt.Text + "','" + passwordTxt.Text + "', '" + dobTxt.Text + "', '" + genderTxt.Text + "', '" + phoneTxt.Text + "', '" + addressTxt.Text + "', '"+ adminIdText.Text + "' )";
+                    command = new MySqlCommand(query, connection);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Product Added Succesfully");
+                    connection.Close();
+                    fullnameTxt.Text = String.Empty;
+                    usernameTxt.Text = String.Empty;
+                    passwordTxt.Text = String.Empty;
+                    dobTxt.Text = String.Empty;
+                    genderTxt.Text = String.Empty;
+                    phoneTxt.Text = String.Empty;
+                    addressTxt.Text = String.Empty;
+                    adminIdText.Text = String.Empty;
+                }
+
+
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM `product` WHERE 1", connection);
+                DataTable dt = new DataTable();
+                mySqlDataAdapter.Fill(dt);
+
+                attendantsDataGrid.DataSource = dt;
+            }
         }
     }
 }
