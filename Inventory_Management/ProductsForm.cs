@@ -58,6 +58,8 @@ namespace Inventory_Management
                     priceTxt.Text = String.Empty;
                     expTxt.Text = String.Empty;
                     AdminIdTxt.Text = String.Empty;
+
+                    ProdNametxt.Focus();
                 }
 
 
@@ -143,6 +145,7 @@ namespace Inventory_Management
                     expTxt.Text = String.Empty;
                     AdminIdTxt.Text = String.Empty;
 
+                    ProdNametxt.Focus();
                 }
 
 
@@ -180,6 +183,8 @@ namespace Inventory_Management
                     priceTxt.Text = String.Empty;
                     expTxt.Text = String.Empty;
                     AdminIdTxt.Text = String.Empty;
+
+                    ProdNametxt.Focus();
                 }
 
 

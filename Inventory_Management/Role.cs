@@ -37,10 +37,7 @@ namespace Inventory_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-             this.Hide();
-             AdminInterface admin = new AdminInterface();
-             admin.Show();
-           /* if (roleComboBox.SelectedItem == "Admin")
+           if (roleComboBox.SelectedItem == "Admin")
             {
                 string username, userPassword;
                 username = usernameTxt.Text;
@@ -86,10 +83,55 @@ namespace Inventory_Management
                 }
 
             }
-            else
+           else if (roleComboBox.SelectedItem == "Attendant")
+            {
+                string username, userPassword;
+                username = usernameTxt.Text;
+                userPassword = passwordTxt.Text;
+
+                try
+                {
+                    string query = "SELECT `username`, `passwd` FROM `attendant` WHERE username='" + usernameTxt.Text + "' AND passwd='" + passwordTxt.Text + "'";
+
+                    MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, connection);
+                    DataTable dt = new DataTable();
+                    mySqlDataAdapter.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        username = usernameTxt.Text;
+                        userPassword = passwordTxt.Text;
+
+                        MessageBox.Show("Login Successfull");
+
+                        this.Hide();
+                        AdminInterface admin = new AdminInterface();
+                        admin.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid username or password");
+                        usernameTxt.Clear();
+                        passwordTxt.Clear();
+
+                        usernameTxt.Focus();
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+           else
             {
                 MessageBox.Show("Choose a valid role");
-            }*/
+            }
 
         }
 

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,19 @@ namespace Inventory_Management
 {
     public partial class StockInterface : Form
     {
+        public static string connectionString = "server=localhost;database=inventory_system;uid=root; pwd=\"\";";
+        public static MySqlConnection connection = new MySqlConnection(connectionString);
         public StockInterface()
         {
             InitializeComponent();
+            //using (MySqlConnection connection = new MySqlConnection(connectionString))
+            // {
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT `prodname`, `prod_category_id`, `barcode`, `Quantity` FROM `product` WHERE 1", connection);
+            DataTable dt = new DataTable();
+            mySqlDataAdapter.Fill(dt);
+
+            stockDataGrid.DataSource = dt;
+            //  }
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -49,6 +62,38 @@ namespace Inventory_Management
         }
 
         private void StockInterface_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           //Instance of the PdfPTable class
+            PdfPTable table = new PdfPTable(stockDataGrid.Columns.Count);
+
+            //Adding header to the pdf
+            for(int i = 0; i < stockDataGrid.Columns.Count; i++)
+            {
+                table.AddCell(new Phrase(stockDataGrid.Columns[i].HeaderText));
+            }
+
+            //Indicating the first row as the header
+            table.HeaderRows = 1;
+
+            for(int j = 0; j < stockDataGrid.Rows.Count; j++)
+            {
+                for(int k = 0; k < stockDataGrid.Columns.Count; k++)
+                {
+                    if (stockDataGrid[k, j].Value != null)
+                    {
+                        table.AddCell(new Phrase(stockDataGrid[k, j].Value.ToString()));
+                    }
+                }
+            }
+            doc.Add(table);
+        }
+
+        private void stockDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

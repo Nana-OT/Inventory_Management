@@ -180,6 +180,7 @@
             this.updatebtn.TabIndex = 46;
             this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = false;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // button9
             // 
@@ -273,6 +274,7 @@
             this.removebtn.TabIndex = 45;
             this.removebtn.Text = "Remove";
             this.removebtn.UseVisualStyleBackColor = false;
+            this.removebtn.Click += new System.EventHandler(this.removebtn_Click);
             // 
             // panel1
             // 
@@ -398,6 +400,7 @@
             this.attendantsDataGrid.RowTemplate.Height = 33;
             this.attendantsDataGrid.Size = new System.Drawing.Size(548, 627);
             this.attendantsDataGrid.TabIndex = 39;
+            this.attendantsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.attendantsDataGrid_CellContentClick);
             // 
             // addressTxt
             // 

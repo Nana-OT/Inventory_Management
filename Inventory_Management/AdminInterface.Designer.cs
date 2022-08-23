@@ -274,7 +274,8 @@
             this.Dashboard.TabIndex = 0;
             this.Dashboard.Text = "DASHBOARD";
             this.Dashboard.UseVisualStyleBackColor = false;
-            // 
+            
+            
             // AdminInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -312,5 +313,6 @@
         private Button button7;
         private Button button8;
         private DataGridView CategoryGridView;
+        
     }
 }
