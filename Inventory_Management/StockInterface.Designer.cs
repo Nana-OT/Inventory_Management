@@ -33,7 +33,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -99,7 +98,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button11);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -112,21 +110,6 @@
             this.panel1.Size = new System.Drawing.Size(300, 634);
             this.panel1.TabIndex = 42;
             // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(-1, 524);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(300, 40);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "About";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -135,7 +118,7 @@
             this.button10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(-4, 581);
+            this.button10.Location = new System.Drawing.Point(-1, 555);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(300, 40);
             this.button10.TabIndex = 8;
@@ -290,7 +273,6 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Panel panel1;
-        private Button button9;
         private Button button10;
         private Button button11;
         private Button button12;

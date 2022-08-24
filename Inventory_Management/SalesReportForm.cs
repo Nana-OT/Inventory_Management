@@ -67,5 +67,12 @@ namespace Inventory_Management
             ProductCatForm category = new ProductCatForm();
             category.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Role role = new Role();
+            role.Show();
+        }
     }
 }

@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.CategoryGridView = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -91,7 +90,6 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.pictureBox2);
@@ -104,21 +102,6 @@
             this.panel3.Size = new System.Drawing.Size(300, 634);
             this.panel3.TabIndex = 5;
             // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(-1, 524);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(300, 40);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "About";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -127,7 +110,7 @@
             this.button7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(-4, 581);
+            this.button7.Location = new System.Drawing.Point(0, 558);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(300, 40);
             this.button7.TabIndex = 8;
@@ -311,7 +294,6 @@
         private PictureBox pictureBox2;
         private Panel panel2;
         private Button button7;
-        private Button button8;
         private DataGridView CategoryGridView;
         
     }
