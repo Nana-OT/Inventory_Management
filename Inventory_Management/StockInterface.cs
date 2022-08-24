@@ -104,5 +104,12 @@ namespace Inventory_Management
             Role role = new Role();
             role.Show();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SalesReportForm salesReportForm = new SalesReportForm();
+            salesReportForm.Show();
+        }
     }
 }

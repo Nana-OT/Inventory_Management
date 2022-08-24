@@ -46,5 +46,10 @@ namespace Inventory_Management
         {
 
         }
+
+        private void GetStartedForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

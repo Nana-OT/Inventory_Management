@@ -1,6 +1,6 @@
 ﻿namespace Inventory_Management
 {
-    partial class StockInterface
+    partial class SalesReportForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel4 = new System.Windows.Forms.Panel();
             this.button16 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,24 +40,15 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
-            this.stockDataGrid = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
+            this.salesHistoryDataGrid = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryDataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.button16);
-            this.panel4.Location = new System.Drawing.Point(190, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1077, 84);
-            this.panel4.TabIndex = 41;
             // 
             // button16
             // 
@@ -73,7 +64,15 @@
             this.button16.TabIndex = 1;
             this.button16.Text = "ADMIN DASHBOARD";
             this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.button16);
+            this.panel4.Location = new System.Drawing.Point(190, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1077, 84);
+            this.panel4.TabIndex = 20;
             // 
             // pictureBox4
             // 
@@ -82,7 +81,7 @@
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(190, 84);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 40;
+            this.pictureBox4.TabIndex = 19;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
@@ -110,7 +109,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 85);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 634);
-            this.panel1.TabIndex = 42;
+            this.panel1.TabIndex = 21;
             // 
             // button9
             // 
@@ -141,15 +140,14 @@
             this.button10.TabIndex = 8;
             this.button10.Text = "Logout";
             this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button11.BackColor = System.Drawing.Color.White;
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.Location = new System.Drawing.Point(0, 415);
             this.button11.Name = "button11";
@@ -161,11 +159,11 @@
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.White;
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.Location = new System.Drawing.Point(0, 369);
             this.button12.Name = "button12";
@@ -223,61 +221,59 @@
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // stockDataGrid
+            // salesHistoryDataGrid
             // 
-            this.stockDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.stockDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stockDataGrid.Location = new System.Drawing.Point(406, 133);
-            this.stockDataGrid.Name = "stockDataGrid";
-            this.stockDataGrid.RowHeadersWidth = 62;
-            this.stockDataGrid.RowTemplate.Height = 33;
-            this.stockDataGrid.Size = new System.Drawing.Size(668, 489);
-            this.stockDataGrid.TabIndex = 43;
-            this.stockDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stockDataGrid_CellContentClick);
+            this.salesHistoryDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.salesHistoryDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.salesHistoryDataGrid.Location = new System.Drawing.Point(367, 144);
+            this.salesHistoryDataGrid.Name = "salesHistoryDataGrid";
+            this.salesHistoryDataGrid.RowHeadersWidth = 62;
+            this.salesHistoryDataGrid.RowTemplate.Height = 33;
+            this.salesHistoryDataGrid.Size = new System.Drawing.Size(812, 506);
+            this.salesHistoryDataGrid.TabIndex = 22;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(634, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(227, 32);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Products Available";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(690, 99);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 38);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Sales History";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(715, 641);
+            this.button1.Location = new System.Drawing.Point(754, 668);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 40);
-            this.button1.TabIndex = 49;
+            this.button1.TabIndex = 50;
             this.button1.Text = "Print";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // StockInterface
+            // SalesReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 720);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.stockDataGrid);
-            this.Name = "StockInterface";
-            this.Text = "StockInterface";
-            this.Load += new System.EventHandler(this.StockInterface_Load);
+            this.Controls.Add(this.salesHistoryDataGrid);
+            this.Name = "SalesReportForm";
+            this.Text = "SalesReportForm";
+            this.Load += new System.EventHandler(this.SalesReportForm_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesHistoryDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,8 +281,8 @@
 
         #endregion
 
-        private Panel panel4;
         private Button button16;
+        private Panel panel4;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Panel panel1;
@@ -297,8 +293,8 @@
         private Button button13;
         private Button button14;
         private Button button15;
-        private DataGridView stockDataGrid;
-        private Label label3;
+        private DataGridView salesHistoryDataGrid;
+        private Label label1;
         private Button button1;
     }
 }

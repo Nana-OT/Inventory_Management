@@ -56,7 +56,9 @@ namespace Inventory_Management
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            SalesReportForm salesReportForm = new SalesReportForm();
+            salesReportForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

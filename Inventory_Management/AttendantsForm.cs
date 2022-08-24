@@ -190,5 +190,12 @@ namespace Inventory_Management
                 connection.Close();
             }
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SalesReportForm salesReportForm = new SalesReportForm();
+            salesReportForm.Show();
+        }
     }
 }

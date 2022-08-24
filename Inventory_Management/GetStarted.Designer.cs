@@ -30,6 +30,7 @@
         {
             this.bgImage = new System.Windows.Forms.PictureBox();
             this.startbtn = new System.Windows.Forms.Button();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             ((System.ComponentModel.ISupportInitialize)(this.bgImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +62,13 @@
             this.startbtn.UseVisualStyleBackColor = false;
             this.startbtn.Click += new System.EventHandler(this.startbtn_Click);
             // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
             // GetStartedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -70,6 +78,7 @@
             this.Controls.Add(this.bgImage);
             this.Name = "GetStartedForm";
             this.Text = "Get Started";
+            this.Load += new System.EventHandler(this.GetStartedForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bgImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -79,5 +88,6 @@
 
         private PictureBox bgImage;
         private Button startbtn;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }
