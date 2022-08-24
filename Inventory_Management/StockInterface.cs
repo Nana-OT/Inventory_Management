@@ -90,12 +90,19 @@ namespace Inventory_Management
                     }
                 }
             }
-            doc.Add(table);
+           
         }
 
         private void stockDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Role role = new Role();
+            role.Show();
         }
     }
 }

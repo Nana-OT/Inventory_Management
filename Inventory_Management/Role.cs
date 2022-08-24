@@ -37,101 +37,104 @@ namespace Inventory_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-           if (roleComboBox.SelectedItem == "Admin")
-            {
-                string username, userPassword;
-                username = usernameTxt.Text;
-                userPassword = passwordTxt.Text;
+            this.Hide();
+            AdminInterface admin = new AdminInterface();
+            admin.Show();
+            /* if (roleComboBox.SelectedItem == "Admin")
+              {
+                  string username, userPassword;
+                  username = usernameTxt.Text;
+                  userPassword = passwordTxt.Text;
 
-                try
-                {
-                    string query = "SELECT `username`, `passwd` FROM `admin` WHERE username='" + usernameTxt.Text + "' AND passwd='" + passwordTxt.Text + "'";
+                  try
+                  {
+                      string query = "SELECT `username`, `passwd` FROM `admin` WHERE username='" + usernameTxt.Text + "' AND passwd='" + passwordTxt.Text + "'";
 
-                    MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, connection);
-                    DataTable dt = new DataTable();
-                    mySqlDataAdapter.Fill(dt);
+                      MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, connection);
+                      DataTable dt = new DataTable();
+                      mySqlDataAdapter.Fill(dt);
 
-                    if (dt.Rows.Count > 0)
-                    {
-                        username = usernameTxt.Text;
-                        userPassword = passwordTxt.Text;
+                      if (dt.Rows.Count > 0)
+                      {
+                          username = usernameTxt.Text;
+                          userPassword = passwordTxt.Text;
 
-                        MessageBox.Show("Login Successfull");
+                          MessageBox.Show("Login Successfull");
 
-                        this.Hide();
-                        AdminInterface admin = new AdminInterface();
-                        admin.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please enter a valid username or password");
-                        usernameTxt.Clear();
-                        passwordTxt.Clear();
+                          this.Hide();
+                          AdminInterface admin = new AdminInterface();
+                          admin.Show();
+                      }
+                      else
+                      {
+                          MessageBox.Show("Please enter a valid username or password");
+                          usernameTxt.Clear();
+                          passwordTxt.Clear();
 
-                        usernameTxt.Focus();
-                    }
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-
-            }
-           else if (roleComboBox.SelectedItem == "Attendant")
-            {
-                string username, userPassword;
-                username = usernameTxt.Text;
-                userPassword = passwordTxt.Text;
-
-                try
-                {
-                    string query = "SELECT `username`, `passwd` FROM `attendant` WHERE username='" + usernameTxt.Text + "' AND passwd='" + passwordTxt.Text + "'";
-
-                    MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, connection);
-                    DataTable dt = new DataTable();
-                    mySqlDataAdapter.Fill(dt);
-
-                    if (dt.Rows.Count > 0)
-                    {
-                        username = usernameTxt.Text;
-                        userPassword = passwordTxt.Text;
-
-                        MessageBox.Show("Login Successfull");
-
-                        this.Hide();
-                        AdminInterface admin = new AdminInterface();
-                        admin.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please enter a valid username or password");
-                        usernameTxt.Clear();
-                        passwordTxt.Clear();
-
-                        usernameTxt.Focus();
-                    }
+                          usernameTxt.Focus();
+                      }
 
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
-           else
-            {
-                MessageBox.Show("Choose a valid role");
-            }
+                  }
+                  catch (Exception ex)
+                  {
+                      MessageBox.Show(ex.Message);
+                  }
+                  finally
+                  {
+                      connection.Close();
+                  }
+
+              }
+             else if (roleComboBox.SelectedItem == "Attendant")
+              {
+                  string username, userPassword;
+                  username = usernameTxt.Text;
+                  userPassword = passwordTxt.Text;
+
+                  try
+                  {
+                      string query = "SELECT `username`, `passwd` FROM `attendant` WHERE username='" + usernameTxt.Text + "' AND passwd='" + passwordTxt.Text + "'";
+
+                      MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(query, connection);
+                      DataTable dt = new DataTable();
+                      mySqlDataAdapter.Fill(dt);
+
+                      if (dt.Rows.Count > 0)
+                      {
+                          username = usernameTxt.Text;
+                          userPassword = passwordTxt.Text;
+
+                          MessageBox.Show("Login Successfull");
+
+                          this.Hide();
+                          AdminInterface admin = new AdminInterface();
+                          admin.Show();
+                      }
+                      else
+                      {
+                          MessageBox.Show("Please enter a valid username or password");
+                          usernameTxt.Clear();
+                          passwordTxt.Clear();
+
+                          usernameTxt.Focus();
+                      }
+
+
+                  }
+                  catch (Exception ex)
+                  {
+                      MessageBox.Show(ex.Message);
+                  }
+                  finally
+                  {
+                      connection.Close();
+                  }
+              }
+             else
+              {
+                  MessageBox.Show("Choose a valid role");
+              }*/
 
         }
 
@@ -142,7 +145,9 @@ namespace Inventory_Management
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            GetStartedForm getstarted = new GetStartedForm();
+            getstarted.Show();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

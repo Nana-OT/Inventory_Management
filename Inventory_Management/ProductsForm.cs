@@ -196,5 +196,12 @@ namespace Inventory_Management
                 connection.Close();
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Role role = new Role();
+            role.Show();
+        }
     }
 }

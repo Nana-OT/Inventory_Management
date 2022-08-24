@@ -69,5 +69,12 @@ namespace Inventory_Management
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Role role = new Role();
+            role.Show();
+        }
     }
 }

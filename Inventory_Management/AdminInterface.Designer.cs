@@ -133,6 +133,7 @@
             this.button7.TabIndex = 8;
             this.button7.Text = "Logout";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -274,8 +275,7 @@
             this.Dashboard.TabIndex = 0;
             this.Dashboard.Text = "DASHBOARD";
             this.Dashboard.UseVisualStyleBackColor = false;
-            
-            
+            // 
             // AdminInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
