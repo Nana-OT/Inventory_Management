@@ -294,7 +294,7 @@
             this.button10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(-1, 537);
+            this.button10.Location = new System.Drawing.Point(-1, 553);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(300, 40);
             this.button10.TabIndex = 8;

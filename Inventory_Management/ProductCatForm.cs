@@ -178,9 +178,19 @@ namespace Inventory_Management
 
         private void button7_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Role role = new Role();
-            role.Show();
+            DialogResult dialogResult = MessageBox.Show("Do you want to logout?", "Confirm!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("You are logged out!");
+                this.Hide();
+                Role role = new Role();
+                role.Show();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("Logout cancelled succesfully! ");
+                this.Refresh();
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace Inventory_Management
 {
-    partial class AttendantInterface
+    partial class AttendantWelcome
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendantWelcome));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Inventory_Management.Properties.Resources.Agent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(460, 63);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(380, 256);
@@ -85,7 +86,7 @@
             this.label1.Text = "Click to start a new session";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // button2
+            // attendantbtn
             // 
             this.attendantbtn.BackColor = System.Drawing.Color.White;
             this.attendantbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -94,13 +95,14 @@
             this.attendantbtn.ForeColor = System.Drawing.Color.Black;
             this.attendantbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.attendantbtn.Location = new System.Drawing.Point(440, 419);
-            this.attendantbtn.Name = "button2";
+            this.attendantbtn.Name = "attendantbtn";
             this.attendantbtn.Size = new System.Drawing.Size(157, 64);
             this.attendantbtn.TabIndex = 44;
             this.attendantbtn.Text = "BACK";
             this.attendantbtn.UseVisualStyleBackColor = false;
+            this.attendantbtn.Click += new System.EventHandler(this.attendantbtn_Click);
             // 
-            // AttendantInterface
+            // AttendantWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,8 +113,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox4);
-            this.Name = "AttendantInterface";
+            this.Name = "AttendantWelcome";
             this.Text = "Attendant";
+            this.Load += new System.EventHandler(this.AttendantForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);

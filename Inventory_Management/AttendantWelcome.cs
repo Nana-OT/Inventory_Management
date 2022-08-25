@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inventory_Management
 {
-    public partial class AttendantInterface : Form
+    public partial class AttendantWelcome : Form
     {
-        public AttendantInterface()
+        public AttendantWelcome()
         {
             InitializeComponent();
         }
@@ -44,7 +44,32 @@ namespace Inventory_Management
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Do you want to start a new session?", "Confirm!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Session Started!");
+                this.Hide();
+                AttendantInterface attendantInterface = new AttendantInterface();
+                attendantInterface.Show();
+                
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("Session not started! ");
+                this.Refresh();
+            }
+        }
 
+        private void AttendantForm1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attendantbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Role role = new Role();
+            role.Show();
         }
     }
 }

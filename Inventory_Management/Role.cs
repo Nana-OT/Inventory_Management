@@ -103,11 +103,11 @@ namespace Inventory_Management
                           username = usernameTxt.Text;
                           userPassword = passwordTxt.Text;
 
-                          MessageBox.Show("Login Successfull");
-
-                          this.Hide();
-                          AttendantInterface attendant = new AttendantInterface();
-                          attendant.Show();
+                        MessageBox.Show("Login Successfull");
+                        this.Hide();
+                        AttendantWelcome welcome = new AttendantWelcome();
+                        welcome.Show();
+                          
                       }
                       else
                       {
