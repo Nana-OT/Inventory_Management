@@ -188,7 +188,7 @@ namespace Inventory_Management
                 }
 
 
-                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM `prodcategory` WHERE 1", connection);
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM `product` WHERE 1", connection);
                 DataTable dt = new DataTable();
                 mySqlDataAdapter.Fill(dt);
 

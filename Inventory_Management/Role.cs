@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace Inventory_Management
 {
@@ -18,6 +19,7 @@ namespace Inventory_Management
         public Role()
         {
             InitializeComponent();
+            passwordTxt.PasswordChar = '*';
         }
 
         private void shopRite_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace Inventory_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
           
              if (roleComboBox.SelectedItem == "Admin")
               {
