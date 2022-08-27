@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
@@ -46,6 +47,8 @@
             this.QuantityTxtBox = new System.Windows.Forms.TextBox();
             this.removebtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendantsDataGrid)).BeginInit();
@@ -73,6 +76,7 @@
             this.button3.TabIndex = 53;
             this.button3.Text = "Close Session";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button16
             // 
@@ -112,14 +116,22 @@
             // 
             // AttendantProDataGrid
             // 
-            this.AttendantProDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AttendantProDataGrid.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AttendantProDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.AttendantProDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AttendantProDataGrid.Location = new System.Drawing.Point(22, 148);
+            this.AttendantProDataGrid.Location = new System.Drawing.Point(0, 148);
             this.AttendantProDataGrid.Name = "AttendantProDataGrid";
             this.AttendantProDataGrid.ReadOnly = true;
             this.AttendantProDataGrid.RowHeadersWidth = 62;
             this.AttendantProDataGrid.RowTemplate.Height = 33;
-            this.AttendantProDataGrid.Size = new System.Drawing.Size(451, 580);
+            this.AttendantProDataGrid.Size = new System.Drawing.Size(532, 574);
             this.AttendantProDataGrid.TabIndex = 51;
             this.AttendantProDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AttendantProDataGrid_CellContentClick);
             // 
@@ -128,7 +140,7 @@
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(951, 660);
+            this.button1.Location = new System.Drawing.Point(998, 662);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 41);
             this.button1.TabIndex = 52;
@@ -140,7 +152,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(98, 113);
+            this.label3.Location = new System.Drawing.Point(65, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(273, 32);
             this.label3.TabIndex = 53;
@@ -167,7 +179,7 @@
             // 
             // ProductTxtBox
             // 
-            this.ProductTxtBox.Location = new System.Drawing.Point(604, 182);
+            this.ProductTxtBox.Location = new System.Drawing.Point(634, 236);
             this.ProductTxtBox.Name = "ProductTxtBox";
             this.ProductTxtBox.Size = new System.Drawing.Size(178, 31);
             this.ProductTxtBox.TabIndex = 57;
@@ -175,7 +187,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(527, 186);
+            this.label1.Location = new System.Drawing.Point(557, 240);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 25);
             this.label1.TabIndex = 58;
@@ -184,7 +196,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(550, 240);
+            this.label2.Location = new System.Drawing.Point(580, 294);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 25);
             this.label2.TabIndex = 60;
@@ -192,7 +204,7 @@
             // 
             // PriceTxtBox
             // 
-            this.PriceTxtBox.Location = new System.Drawing.Point(604, 236);
+            this.PriceTxtBox.Location = new System.Drawing.Point(634, 290);
             this.PriceTxtBox.Name = "PriceTxtBox";
             this.PriceTxtBox.Size = new System.Drawing.Size(178, 31);
             this.PriceTxtBox.TabIndex = 59;
@@ -200,7 +212,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(522, 300);
+            this.label4.Location = new System.Drawing.Point(552, 354);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 25);
             this.label4.TabIndex = 62;
@@ -208,7 +220,7 @@
             // 
             // QuantityTxtBox
             // 
-            this.QuantityTxtBox.Location = new System.Drawing.Point(604, 296);
+            this.QuantityTxtBox.Location = new System.Drawing.Point(634, 350);
             this.QuantityTxtBox.Name = "QuantityTxtBox";
             this.QuantityTxtBox.Size = new System.Drawing.Size(178, 31);
             this.QuantityTxtBox.TabIndex = 61;
@@ -218,7 +230,7 @@
             this.removebtn.BackColor = System.Drawing.Color.White;
             this.removebtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.removebtn.ForeColor = System.Drawing.Color.Black;
-            this.removebtn.Location = new System.Drawing.Point(650, 401);
+            this.removebtn.Location = new System.Drawing.Point(671, 401);
             this.removebtn.Name = "removebtn";
             this.removebtn.Size = new System.Drawing.Size(141, 41);
             this.removebtn.TabIndex = 64;
@@ -230,7 +242,7 @@
             this.AddBtn.BackColor = System.Drawing.Color.Black;
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.AddBtn.Location = new System.Drawing.Point(532, 401);
+            this.AddBtn.Location = new System.Drawing.Point(553, 401);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(112, 41);
             this.AddBtn.TabIndex = 63;
@@ -238,12 +250,30 @@
             this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(601, 188);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 25);
+            this.label5.TabIndex = 66;
+            this.label5.Text = "ID";
+            // 
+            // IDTextBox
+            // 
+            this.IDTextBox.Location = new System.Drawing.Point(634, 184);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(178, 31);
+            this.IDTextBox.TabIndex = 65;
+            // 
             // AttendantInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 720);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.IDTextBox);
             this.Controls.Add(this.removebtn);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.label4);
@@ -292,5 +322,7 @@
         private TextBox QuantityTxtBox;
         private Button removebtn;
         private Button AddBtn;
+        private Label label5;
+        private TextBox IDTextBox;
     }
 }
