@@ -22,7 +22,7 @@ namespace Inventory_Management
             InitializeComponent();
             //using (MySqlConnection connection = new MySqlConnection(connectionString))
             // {
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT `id`, `prodname`, `barcode`, `Quantity`, `Price(GHs)` FROM `product` WHERE 1", connection);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT `prodname`, `Price(GHs)` FROM `product` WHERE 1", connection);
             dt = new DataTable();
             mySqlDataAdapter.Fill(dt);
 
@@ -58,8 +58,6 @@ namespace Inventory_Management
             if(e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.AttendantProDataGrid.Rows[e.RowIndex];
-
-                IDTextBox.Text = row.Cells["id"].Value.ToString();
                 ProductTxtBox.Text = row.Cells["prodname"].Value.ToString();
                 PriceTxtBox.Text = row.Cells["Price(Ghs)"].Value.ToString();
 
@@ -72,8 +70,9 @@ namespace Inventory_Management
             dt = new DataTable();
             try
             {
-                string sql = "SELECT `Quantity`FROM `product` WHERE id =" +ProdID;
+                string sql = "SELECT `Quantity`FROM `product` WHERE id ='"+ProdID+"'";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
                 connection.Open();
@@ -94,23 +93,31 @@ namespace Inventory_Management
             }
             return quantity;
         }
-        public bool upDateQuantity(int ProdID, decimal qty)
+
+        public bool UpdateQuantity(int ProdId, decimal qty)
         {
             bool success = false;
 
             try
             {
-                string sql = "UPDATE `Quantity`FROM `product` WHERE id =" + ProdID.;
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                string query = "UPDATE `product` SET `Quantity`='"+qty+"' WHERE 1";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                cmd.Parameters.AddWithValue("@Quantity", qty);
-                cmd.Parameters.AddWithValue("@id", ProdID);
+                cmd.Parameters.AddWithValue("Quantity", qty);
+                cmd.Parameters.AddWithValue("id", ProdId);
 
                 connection.Open();
 
-                 int rows = cmd.ExecuteNonQuery();
-                if(rows > 10)
+                int rows = cmd.ExecuteNonQuery();
 
+                if (rows > 0)
+                {
+                    success = true;
+                }
+                else
+                {
+                    success = false;
+                }
             }
             catch(Exception ex)
             {
@@ -118,51 +125,43 @@ namespace Inventory_Management
             }
             finally
             {
-
+                connection.Close();
             }
-            return
+            return success;
         }
+
+        public bool DecreaseQuantity(int ProdId, decimal qty)
+        {
+            bool success = false;
+            try
+            {
+                decimal currentQuantity = GetQuantity(ProdId);
+
+                decimal newQty = currentQuantity - qty;
+
+                success = UpdateQuantity(ProdId, newQty);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+
+            return success;
+        }
+        
+        
 
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT `id`, `prodname`, `barcode`, `Quantity`, `Price(GHs)` FROM `product` WHERE 1", connection);
-            dt = new DataTable();
-            mySqlDataAdapter.Fill(dt);
-            AttendantProDataGrid.DataSource = dt;
-            connection.Close();
-            /*connection.Open();
-            MySqlCommand command = new MySqlCommand("SELECT  `Quantity` FROM `product` WHERE 'id' = '"+IDTextBox.Text+"'", connection);            
-
-            MySqlDataReader read = command.ExecuteReader();
-            while(read.Read())
-            {
-                int result;
-                string quantity = (read["Quantity"]).ToString();
-                int stock = int.Parse(quantity);
-                int add = Convert.ToInt32(QuantityTxtBox.Text);
-                result = stock - add;
-
-                command = new MySqlCommand("UPDATE `product` SET `Quantity`='" + result + "' WHERE `product`.`id` = '"+IDTextBox.Text+"'", connection);
-                command.ExecuteNonQuery();
-            }
-            connection.Close();
-
-            IDTextBox.Text = String.Empty;
-            ProductTxtBox.Text = String.Empty;
-            PriceTxtBox.Text = String.Empty;
-            QuantityTxtBox.Text = String.Empty;
-
-            connection.Close();
-
-            connection.Open();
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT `id`, `prodname`, `barcode`, `Quantity`, `Price(GHs)` FROM `product` WHERE 1", connection);
-            DataTable dt = new DataTable();
-            mySqlDataAdapter.Fill(dt);
-            AttendantProDataGrid.DataSource = dt;
-            connection.Close();*/
-
+            attendantsDataGrid.Rows.Add(ProductTxtBox.Text, PriceTxtBox.Text, QuantityTxtBox.Text);
+            MessageBox.Show(ProductTxtBox.Text.ToString() + "is added");
         }
 
         private void button3_Click(object sender, EventArgs e)

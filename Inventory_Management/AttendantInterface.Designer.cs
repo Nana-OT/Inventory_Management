@@ -34,6 +34,9 @@
             this.button16 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.attendantsDataGrid = new System.Windows.Forms.DataGridView();
+            this.prodname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AttendantProDataGrid = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,8 +50,6 @@
             this.QuantityTxtBox = new System.Windows.Forms.TextBox();
             this.removebtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendantsDataGrid)).BeginInit();
@@ -105,14 +106,43 @@
             // 
             // attendantsDataGrid
             // 
-            this.attendantsDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.attendantsDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.attendantsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.attendantsDataGrid.Location = new System.Drawing.Point(834, 165);
+            this.attendantsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.prodname,
+            this.price,
+            this.qty});
+            this.attendantsDataGrid.Location = new System.Drawing.Point(753, 163);
             this.attendantsDataGrid.Name = "attendantsDataGrid";
+            this.attendantsDataGrid.ReadOnly = true;
             this.attendantsDataGrid.RowHeadersWidth = 62;
             this.attendantsDataGrid.RowTemplate.Height = 33;
-            this.attendantsDataGrid.Size = new System.Drawing.Size(433, 480);
+            this.attendantsDataGrid.Size = new System.Drawing.Size(514, 480);
             this.attendantsDataGrid.TabIndex = 48;
+            // 
+            // prodname
+            // 
+            this.prodname.HeaderText = "PRODUCT";
+            this.prodname.MinimumWidth = 8;
+            this.prodname.Name = "prodname";
+            this.prodname.ReadOnly = true;
+            this.prodname.Width = 150;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "PRICE";
+            this.price.MinimumWidth = 8;
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Width = 150;
+            // 
+            // qty
+            // 
+            this.qty.HeaderText = "QUANTITY";
+            this.qty.MinimumWidth = 8;
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
+            this.qty.Width = 150;
             // 
             // AttendantProDataGrid
             // 
@@ -131,7 +161,7 @@
             this.AttendantProDataGrid.ReadOnly = true;
             this.AttendantProDataGrid.RowHeadersWidth = 62;
             this.AttendantProDataGrid.RowTemplate.Height = 33;
-            this.AttendantProDataGrid.Size = new System.Drawing.Size(532, 574);
+            this.AttendantProDataGrid.Size = new System.Drawing.Size(363, 560);
             this.AttendantProDataGrid.TabIndex = 51;
             this.AttendantProDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AttendantProDataGrid_CellContentClick);
             // 
@@ -140,7 +170,7 @@
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(998, 662);
+            this.button1.Location = new System.Drawing.Point(954, 667);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 41);
             this.button1.TabIndex = 52;
@@ -152,7 +182,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(65, 113);
+            this.label3.Location = new System.Drawing.Point(32, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(273, 32);
             this.label3.TabIndex = 53;
@@ -179,7 +209,7 @@
             // 
             // ProductTxtBox
             // 
-            this.ProductTxtBox.Location = new System.Drawing.Point(634, 236);
+            this.ProductTxtBox.Location = new System.Drawing.Point(502, 224);
             this.ProductTxtBox.Name = "ProductTxtBox";
             this.ProductTxtBox.Size = new System.Drawing.Size(178, 31);
             this.ProductTxtBox.TabIndex = 57;
@@ -187,7 +217,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(557, 240);
+            this.label1.Location = new System.Drawing.Point(425, 228);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 25);
             this.label1.TabIndex = 58;
@@ -196,7 +226,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(580, 294);
+            this.label2.Location = new System.Drawing.Point(448, 282);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 25);
             this.label2.TabIndex = 60;
@@ -204,7 +234,7 @@
             // 
             // PriceTxtBox
             // 
-            this.PriceTxtBox.Location = new System.Drawing.Point(634, 290);
+            this.PriceTxtBox.Location = new System.Drawing.Point(502, 278);
             this.PriceTxtBox.Name = "PriceTxtBox";
             this.PriceTxtBox.Size = new System.Drawing.Size(178, 31);
             this.PriceTxtBox.TabIndex = 59;
@@ -212,7 +242,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(552, 354);
+            this.label4.Location = new System.Drawing.Point(420, 342);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 25);
             this.label4.TabIndex = 62;
@@ -220,7 +250,7 @@
             // 
             // QuantityTxtBox
             // 
-            this.QuantityTxtBox.Location = new System.Drawing.Point(634, 350);
+            this.QuantityTxtBox.Location = new System.Drawing.Point(502, 338);
             this.QuantityTxtBox.Name = "QuantityTxtBox";
             this.QuantityTxtBox.Size = new System.Drawing.Size(178, 31);
             this.QuantityTxtBox.TabIndex = 61;
@@ -230,7 +260,7 @@
             this.removebtn.BackColor = System.Drawing.Color.White;
             this.removebtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.removebtn.ForeColor = System.Drawing.Color.Black;
-            this.removebtn.Location = new System.Drawing.Point(671, 401);
+            this.removebtn.Location = new System.Drawing.Point(539, 389);
             this.removebtn.Name = "removebtn";
             this.removebtn.Size = new System.Drawing.Size(141, 41);
             this.removebtn.TabIndex = 64;
@@ -242,7 +272,7 @@
             this.AddBtn.BackColor = System.Drawing.Color.Black;
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.AddBtn.Location = new System.Drawing.Point(553, 401);
+            this.AddBtn.Location = new System.Drawing.Point(421, 389);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(112, 41);
             this.AddBtn.TabIndex = 63;
@@ -250,30 +280,12 @@
             this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(601, 188);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 25);
-            this.label5.TabIndex = 66;
-            this.label5.Text = "ID";
-            // 
-            // IDTextBox
-            // 
-            this.IDTextBox.Location = new System.Drawing.Point(634, 184);
-            this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(178, 31);
-            this.IDTextBox.TabIndex = 65;
-            // 
             // AttendantInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 720);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.IDTextBox);
             this.Controls.Add(this.removebtn);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.label4);
@@ -322,7 +334,8 @@
         private TextBox QuantityTxtBox;
         private Button removebtn;
         private Button AddBtn;
-        private Label label5;
-        private TextBox IDTextBox;
+        private DataGridViewTextBoxColumn prodname;
+        private DataGridViewTextBoxColumn price;
+        private DataGridViewTextBoxColumn qty;
     }
 }
