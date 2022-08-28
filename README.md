@@ -6,8 +6,9 @@ The Inventory Management System is a simple software developed using C#. This so
 from purchasing to production to end sales. It helps them make better decisions and governs how they approach inventory management for the business going forward. 
 
 # HOW IT WORKS
-When you launch the application, you will see a get started screen where you can click on the start button to get started.
-You will have to choose your role(Admin/ Attendant) and type in your credentials to be able to login
+When you launch the application, you will see a get started screen.
+1. Click on the start button to get started.
+2. Choose your role(Admin/ Attendant) and type in your credentials to be able to login
 An Admin has access and can manage all attendants, products, product categories, stocks and sales made in a period of time.
 An Attendant has an option to start a session.
 An attendant can only sell when he starts a session.
