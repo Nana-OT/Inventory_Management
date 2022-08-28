@@ -13,6 +13,7 @@ An Admin has access and can manage all attendants, products, product categories,
 An Attendant has an option to start a session.
 An attendant can only sell when he starts a session.
 After selling for the day, attendant can close the session.
+YouTube Link: https://youtu.be/VXIajXMjfJw
 
 # Packages Installed
 1. Sql.Data
