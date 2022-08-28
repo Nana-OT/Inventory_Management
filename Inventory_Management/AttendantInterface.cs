@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DGV;
+using DgvFilterPopup;
 
 namespace Inventory_Management
 {
@@ -32,7 +34,7 @@ namespace Inventory_Management
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            printDocument1.Print();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace Inventory_Management
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void AttendantInterface_Load(object sender, EventArgs e)
@@ -62,97 +64,6 @@ namespace Inventory_Management
                 PriceTxtBox.Text = row.Cells["Price(Ghs)"].Value.ToString();
 
             }
-        }
-        public decimal GetQuantity(int ProdID)
-        {
-            decimal quantity = 0;
-
-            dt = new DataTable();
-            try
-            {
-                string sql = "SELECT `Quantity`FROM `product` WHERE id ='"+ProdID+"'";
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-
-                connection.Open();
-                adapter.Fill(dt);
-
-                if (dt.Rows.Count > 0)
-                {
-                    quantity = decimal.Parse(dt.Rows[0]["Quantity"].ToString());
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return quantity;
-        }
-
-        public bool UpdateQuantity(int ProdId, decimal qty)
-        {
-            bool success = false;
-
-            try
-            {
-                string query = "UPDATE `product` SET `Quantity`='"+qty+"' WHERE 1";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-
-                cmd.Parameters.AddWithValue("Quantity", qty);
-                cmd.Parameters.AddWithValue("id", ProdId);
-
-                connection.Open();
-
-                int rows = cmd.ExecuteNonQuery();
-
-                if (rows > 0)
-                {
-                    success = true;
-                }
-                else
-                {
-                    success = false;
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return success;
-        }
-
-        public bool DecreaseQuantity(int ProdId, decimal qty)
-        {
-            bool success = false;
-            try
-            {
-                decimal currentQuantity = GetQuantity(ProdId);
-
-                decimal newQty = currentQuantity - qty;
-
-                success = UpdateQuantity(ProdId, newQty);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-
-
-            return success;
         }
         
         
@@ -179,6 +90,25 @@ namespace Inventory_Management
                 MessageBox.Show("Continue your Session! ");
                 this.Refresh();
             }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(attendantsDataGrid.Width, attendantsDataGrid.Height);
+            attendantsDataGrid.DrawToBitmap(bm, new Rectangle(0, 0, attendantsDataGrid.Width, attendantsDataGrid.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Totalbtn_Click(object sender, EventArgs e)
+        {
+            
+
+            
         }
     }
 }

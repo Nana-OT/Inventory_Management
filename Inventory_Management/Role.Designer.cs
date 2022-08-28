@@ -167,6 +167,7 @@
             this.Controls.Add(this.loginbtn);
             this.Controls.Add(this.usernameTxt);
             this.Controls.Add(this.roleComboBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Role";
             this.Text = "Role";
             this.Load += new System.EventHandler(this.Role_Load);

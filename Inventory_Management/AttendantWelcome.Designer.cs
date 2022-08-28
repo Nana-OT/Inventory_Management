@@ -113,6 +113,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AttendantWelcome";
             this.Text = "Attendant";
             this.Load += new System.EventHandler(this.AttendantForm1_Load);

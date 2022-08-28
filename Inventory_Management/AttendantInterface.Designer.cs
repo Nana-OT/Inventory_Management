@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendantInterface));
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
@@ -50,6 +51,10 @@
             this.QuantityTxtBox = new System.Windows.Forms.TextBox();
             this.removebtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.Totalbtn = new System.Windows.Forms.Button();
+            this.totalLabel = new System.Windows.Forms.Label();
+            this.Totaltxt = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendantsDataGrid)).BeginInit();
@@ -117,7 +122,7 @@
             this.attendantsDataGrid.ReadOnly = true;
             this.attendantsDataGrid.RowHeadersWidth = 62;
             this.attendantsDataGrid.RowTemplate.Height = 33;
-            this.attendantsDataGrid.Size = new System.Drawing.Size(514, 480);
+            this.attendantsDataGrid.Size = new System.Drawing.Size(514, 445);
             this.attendantsDataGrid.TabIndex = 48;
             // 
             // prodname
@@ -280,12 +285,47 @@
             this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // Totalbtn
+            // 
+            this.Totalbtn.BackColor = System.Drawing.Color.White;
+            this.Totalbtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Totalbtn.Location = new System.Drawing.Point(754, 612);
+            this.Totalbtn.Name = "Totalbtn";
+            this.Totalbtn.Size = new System.Drawing.Size(112, 34);
+            this.Totalbtn.TabIndex = 65;
+            this.Totalbtn.Text = "Total";
+            this.Totalbtn.UseVisualStyleBackColor = false;
+            this.Totalbtn.Click += new System.EventHandler(this.Totalbtn_Click);
+            // 
+            // totalLabel
+            // 
+            this.totalLabel.AutoSize = true;
+            this.totalLabel.Location = new System.Drawing.Point(899, 614);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(0, 25);
+            this.totalLabel.TabIndex = 66;
+            this.totalLabel.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // Totaltxt
+            // 
+            this.Totaltxt.Location = new System.Drawing.Point(864, 614);
+            this.Totaltxt.Name = "Totaltxt";
+            this.Totaltxt.Size = new System.Drawing.Size(150, 31);
+            this.Totaltxt.TabIndex = 67;
+            // 
             // AttendantInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 720);
+            this.Controls.Add(this.Totaltxt);
+            this.Controls.Add(this.totalLabel);
+            this.Controls.Add(this.Totalbtn);
             this.Controls.Add(this.removebtn);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.label4);
@@ -302,6 +342,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.attendantsDataGrid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AttendantInterface";
             this.Text = "AttendantInterface";
             this.Load += new System.EventHandler(this.AttendantInterface_Load);
@@ -337,5 +378,9 @@
         private DataGridViewTextBoxColumn prodname;
         private DataGridViewTextBoxColumn price;
         private DataGridViewTextBoxColumn qty;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private Button Totalbtn;
+        private Label totalLabel;
+        private TextBox Totaltxt;
     }
 }

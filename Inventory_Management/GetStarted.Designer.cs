@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetStartedForm));
             this.bgImage = new System.Windows.Forms.PictureBox();
             this.startbtn = new System.Windows.Forms.Button();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
@@ -76,6 +77,7 @@
             this.ClientSize = new System.Drawing.Size(1267, 720);
             this.Controls.Add(this.startbtn);
             this.Controls.Add(this.bgImage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GetStartedForm";
             this.Text = "Get Started";
             this.Load += new System.EventHandler(this.GetStartedForm_Load);
