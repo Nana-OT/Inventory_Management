@@ -66,12 +66,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.priceTxt = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.expTxt = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.AdminIdTxt = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.categoryTxt = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.expTxt = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -548,23 +548,6 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "Price(GHs)";
             // 
-            // expTxt
-            // 
-            this.expTxt.Location = new System.Drawing.Point(452, 453);
-            this.expTxt.Name = "expTxt";
-            this.expTxt.Size = new System.Drawing.Size(217, 50);
-            this.expTxt.TabIndex = 33;
-            this.expTxt.Text = "";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(310, 456);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 25);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Exp Date";
-            // 
             // AdminIdTxt
             // 
             this.AdminIdTxt.Location = new System.Drawing.Point(452, 509);
@@ -598,6 +581,23 @@
             this.label8.Size = new System.Drawing.Size(102, 25);
             this.label8.TabIndex = 40;
             this.label8.Text = "CategoryID";
+            // 
+            // expTxt
+            // 
+            this.expTxt.Location = new System.Drawing.Point(452, 453);
+            this.expTxt.Name = "expTxt";
+            this.expTxt.Size = new System.Drawing.Size(217, 50);
+            this.expTxt.TabIndex = 33;
+            this.expTxt.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(310, 456);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 25);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Exp Date";
             // 
             // ProductsForm
             // 
@@ -689,11 +689,11 @@
         private Label label4;
         private RichTextBox priceTxt;
         private Label label5;
-        private RichTextBox expTxt;
-        private Label label6;
         private RichTextBox AdminIdTxt;
         private Label label7;
         private RichTextBox categoryTxt;
         private Label label8;
+        private RichTextBox expTxt;
+        private Label label6;
     }
 }

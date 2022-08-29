@@ -20,7 +20,7 @@ namespace Inventory_Management
             InitializeComponent();
             //using (MySqlConnection connection = new MySqlConnection(connectionString))
             // {
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM `product` WHERE 1", connection);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT `id`, `prodname`, `prod_category_id`, `barcode`, `Quantity`, `Price(GHs)`, `admin_id` FROM `product` WHERE 1", connection);
             DataTable dt = new DataTable();
             mySqlDataAdapter.Fill(dt);
 
@@ -39,13 +39,13 @@ namespace Inventory_Management
             {
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
-                if (ProdNametxt.Text == "" & categoryTxt.Text == "" & barcodetxt.Text == "" & quantitytxt.Text == "" & priceTxt.Text == "" & expTxt.Text == "" & AdminIdTxt.Text == "")
+                if (ProdNametxt.Text == "" & categoryTxt.Text == "" & barcodetxt.Text == "" & quantitytxt.Text == "" & priceTxt.Text == "" & AdminIdTxt.Text == "")
                 {
                     MessageBox.Show("Please fill out all fields");
                 }
                 else
                 {
-                    string query = "INSERT INTO `product`(`prodname`, `prod_category_id`, `barcode`, `Quantity`, `Price(GHs)`, `ExpDate`, `admin_id`) VALUES ('" + ProdNametxt.Text + "','" + categoryTxt.Text + "','" + barcodetxt.Text + "', '" + quantitytxt.Text + "', '" + priceTxt.Text + "', '" + expTxt.Text + "', '" + AdminIdTxt.Text + "' )";
+                    string query = "INSERT INTO `product`(`prodname`, `prod_category_id`, `barcode`, `Quantity`, `Price(GHs)`, `admin_id`) VALUES ('" + ProdNametxt.Text + "','" + categoryTxt.Text + "','" + barcodetxt.Text + "', '" + quantitytxt.Text + "', '" + priceTxt.Text + "', '" + AdminIdTxt.Text + "' )";
                     command = new MySqlCommand(query, connection);
                     command.ExecuteNonQuery();
 
@@ -56,18 +56,19 @@ namespace Inventory_Management
                     barcodetxt.Text = String.Empty;
                     quantitytxt.Text = String.Empty;
                     priceTxt.Text = String.Empty;
-                    expTxt.Text = String.Empty;
                     AdminIdTxt.Text = String.Empty;
 
                     ProdNametxt.Focus();
                 }
 
 
-                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM `product` WHERE 1", connection);
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT `prodname`, `prod_category_id`, `barcode`, `Quantity`, `Price(GHs)`, `admin_id` FROM `product` WHERE 1", connection);
                 DataTable dt = new DataTable();
                 mySqlDataAdapter.Fill(dt);
 
                 productDataGrid.DataSource = dt;
+
+                expTxt.Text = String.Empty;
             }
         }
 
