@@ -53,8 +53,7 @@
             this.AddBtn = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.Totalbtn = new System.Windows.Forms.Button();
-            this.totalLabel = new System.Windows.Forms.Label();
-            this.Totaltxt = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attendantsDataGrid)).BeginInit();
@@ -301,21 +300,12 @@
             this.Totalbtn.UseVisualStyleBackColor = false;
             this.Totalbtn.Click += new System.EventHandler(this.Totalbtn_Click);
             // 
-            // totalLabel
+            // textBox1
             // 
-            this.totalLabel.AutoSize = true;
-            this.totalLabel.Location = new System.Drawing.Point(899, 614);
-            this.totalLabel.Name = "totalLabel";
-            this.totalLabel.Size = new System.Drawing.Size(0, 25);
-            this.totalLabel.TabIndex = 66;
-            this.totalLabel.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // Totaltxt
-            // 
-            this.Totaltxt.Location = new System.Drawing.Point(864, 614);
-            this.Totaltxt.Name = "Totaltxt";
-            this.Totaltxt.Size = new System.Drawing.Size(150, 31);
-            this.Totaltxt.TabIndex = 67;
+            this.textBox1.Location = new System.Drawing.Point(872, 614);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(150, 31);
+            this.textBox1.TabIndex = 66;
             // 
             // AttendantInterface
             // 
@@ -323,8 +313,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1267, 720);
-            this.Controls.Add(this.Totaltxt);
-            this.Controls.Add(this.totalLabel);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Totalbtn);
             this.Controls.Add(this.removebtn);
             this.Controls.Add(this.AddBtn);
@@ -380,7 +369,6 @@
         private DataGridViewTextBoxColumn qty;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private Button Totalbtn;
-        private Label totalLabel;
-        private TextBox Totaltxt;
+        private TextBox textBox1;
     }
 }

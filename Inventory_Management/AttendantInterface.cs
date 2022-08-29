@@ -106,9 +106,10 @@ namespace Inventory_Management
 
         private void Totalbtn_Click(object sender, EventArgs e)
         {
-            
+            int sum = 14210;
 
-            
+            textBox1.Text = sum.ToString();
+
         }
     }
 }
